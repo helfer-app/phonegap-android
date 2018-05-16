@@ -6,7 +6,9 @@
  * Handler for image loading error: displayDefaultImage() added in functions.js as a template's parameter
 -->
 
-<link rel="stylesheet" href="<%= TemplateTags.getThemeAssetUrl('assets/bootstrap/css/bootstrap.min.css') %>">
+<link href="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/bootstrap.min.css') %>" rel="stylesheet" id="bootstrap-css">
+<script src="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/bootstrap.min.js') %>"></script>
+<script src="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/jquery-1.11.1.min.js') %>"></script>
 <script>
     $('#app-header > h1').html('Meldezentrale');
 </script>
@@ -14,97 +16,156 @@
 <div id="content" class="content single-template">
 
 
-    <section class="tabs2 cid-qLJomjo0Cn" id="tabs2-17">
-
-
-
-
-        <div class="container">
-            <h2 class="mbr-section-title align-center pb-5 mbr-fonts-style display-2">
-                Tabs with gradient background
-            </h2>
-            <div class="media-container-row">
-                <div class="col-12 col-md-8">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"><a class="nav-link mbr-fonts-style active show display-7" role="tab" data-toggle="tab" href="#tabs2-17_tab0" aria-selected="true">
-                            Mobile Friendly
-                        </a></li>
-                        <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-17_tab1" aria-selected="true">
-                            No Coding
-                        </a></li>
-                        <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-17_tab2" aria-selected="true">
-                            Unique Styles
-                        </a></li>
-
-
-
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab1" class="tab-pane in active" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        No special actions required, all sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site, it will adapt automagically.
-                                    </p>
-                                </div>
+    <div class="container">
+        <div class="page-header">
+        Alle Felder mit einem <code>*</code> sind Pflichtfelder.
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel with-nav-tabs panel-default">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Mülleimer ist voll</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Etwas ist kaputt gegangen</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Sonstiges</a></li>
+                            <li><a href="#tab4default" data-toggle="tab">Feedback zur Helfer-App</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab1default">
+                                <h1><b>Mülleimer voll? Mülleimer traurig!</b></h1>
+                                <hr>
+                                <form>
+                                    <input name="muell" type="hidden">
+                                    Wo ist der Mülleimer voll? <code>*</code>
+                                    <select class="form-control" name="orte" required>
+                                        <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
+                                        <option value="Schule 7">Schule 7</option>
+                                        <option value="Schule 6">Schule 6</option>
+                                    </select>
+                                    <br>
+                                    Zusatz:
+                                    <input class="form-control" name="zusatz" placeholder="z.B. Haupteingang, Platz davor, Halle etc." type="text">
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
                             </div>
-                        </div>
-                        <div id="tab2" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
-                                    </p>
-                                </div>
+                            <div class="tab-pane fade" id="tab2default">
+                                <h1><b>Ist etwas kaputt gegangen?</b></h1>
+                                <hr>
+                                <form>
+                                    <input name="kaputt" type="hidden">
+                                    Was genau ist kaputt gegangen? <code>*</code>
+                                    <input class="form-control" name="gegenstand" placeholder="z.B. Tisch, Schwebebalken, Tür etc." type="text" required>
+                                    <br>
+                                    An welchem Standort ist es kaputt gegangen? <code>*</code>
+                                    <select class="form-control" name="orte" required>
+                                        <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
+                                        <option value="Schule 7">Schule 7</option>
+                                        <option value="Schule 6">Schule 6</option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
                             </div>
-                        </div>
-                        <div id="tab3" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        Mobirise offers many site blocks in several themes, and though these blocks are pre-made, they are flexible. You can combine blocks in different ways on your pages.
-                                    </p>
-                                </div>
+                            <div class="tab-pane fade" id="tab3default">
+                                <form>
+                                    <input name="sonstiges" type="hidden">
+                                    <h1><b>Spezielles Anliegen das gemeldet werden sollte? Dann...</b></h1>
+                                    <hr>
+                                    <code>Bitte fülle die Felder entsprechend deinem Anliegen aus</code>
+                                    <br>
+                                    <br>
+
+                                    Was?
+                                    <input class="form-control" name="was" placeholder="Was ist passiert?" type="text">
+                                    <br>
+                                    Wo?
+                                    <input type="text" name="wo" class="form-control" placeholder="Wo ist es passiert?">
+                                    <br>
+                                    Wann?
+                                    <input type="text" name="wann" class="form-control" placeholder="Wann ist es passiert?">
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
                             </div>
-                        </div>
-                        <div id="tab4" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        Mobirise gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab5" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        Publish your website to a local drive, FTP or host on Amazon S3, Google Cloud, Github Pages. Don't be a hostage to just one platform or service provider.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab6" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="mbr-text py-5 mbr-fonts-style display-7">
-                                        Just drop the blocks into the page, edit content inline and publish - no technical skills required.
-                                    </p>
-                                </div>
+
+                            <div class="tab-pane fade" id="tab4default">
+                                <form>
+                                    <input name="feedback" type="hidden">
+                                    <h1><b>Hast du Feedback zur App? Dann ist hier der richtige Platz! :)</b></h1>
+                                    <hr>
+                                    <br>
+                                    Feedback: <code>*</code>
+                                    <textarea name="feedback" class="form-control" style="min-width: 100%" required>
+
+                                    </textarea>
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <script src="<%= TemplateTags.getThemeAssetUrl('assets/popper/popper.min.js') %>"></script>
-    <script src="<%= TemplateTags.getThemeAssetUrl('assets/tether/tether.min.js') %>"></script>
-    <script src="<%= TemplateTags.getThemeAssetUrl('assets/bootstrap/js/bootstrap.min.js') %>"></script>
-    <script src="<%= TemplateTags.getThemeAssetUrl('assets/smoothscroll/smooth-scroll.js') %>"></script>
-    <!-- <script src="<%= TemplateTags.getThemeAssetUrl('assets/mbr-tabs/mbr-tabs.js') %>"></script> -->
-    <script src="<%= TemplateTags.getThemeAssetUrl('assets/theme/js/script.js') %>"></script>
+        <script>
+
+            // @desc Show a message in the message bar during 3 sec
+            function showMessage(msgText) {
+                $("#app-message-bar").html(msgText);
+                $("#app-message-bar").removeClass("message-off").addClass("message-on");
+                setTimeout(hideMessage,3000);
+            }
+
+            // @desc Hide the message bar
+            function hideMessage() {
+                $("#app-message-bar").removeClass("message-on").addClass("message-off");
+                $("#app-message-bar").html("");
+            }
+
+
+
+            $('form').on('submit', function (e) {
+
+                var isValid = true;
+                $('input,textarea,select').filter('[required]:visible').each(function() {
+                    if ( $(this).val() === '' )
+                        isValid = false;
+                });
+                if(isValid){
+                    //button disablen
+                    $('.submit-button').prop("disabled",true);
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://lktf.turnjugend-frankfurt.de/wp-content/themes-wp-appkit/q-ios-lktf/php/meldezentrale.php',
+                        data: $(this).serialize(),
+                        success: function () {
+                            $('form').trigger("reset");
+                            showMessage("Danke, deine Meldung wurde erfolgreich versendet!");
+                        },
+                        error: function(){
+                            showMessage("FEHLER: Meldung konnte nicht abgeschickt werden. Hast du Internet?");
+                        }
+                    });
+                    $('.submit-button').prop("disabled",false);
+                    e.preventDefault();
+                }else{
+                    showMessage("Bitte fülle alle Felder aus");
+                    e.preventDefault();
+                }
+
+
+            });
+
+        </script>
+    </div>
+
 
 </div>

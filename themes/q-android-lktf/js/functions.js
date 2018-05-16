@@ -41,6 +41,9 @@ define([
 	
     
 	App.addCustomRoute( 'home', 'home' );
+    App.addCustomRoute( 'ansprechpartner', 'ansprechpartner' );
+    App.addCustomRoute( 'info', 'info' );
+    App.addCustomRoute( 'meldezentrale', 'meldezentrale' );
 	App.addCustomRoute( 'meine-schichten', 'meine-schichten' );
 	
 	App.filter( 'default-route', function( default_route ) {
