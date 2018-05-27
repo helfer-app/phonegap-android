@@ -62,7 +62,7 @@
                             <br>
                             <%= post.adresse %>
                             <br>
-                            <a href="#" onclick="window.open('https://www.google.com/maps/search/?api=1&query=' + post.adresse)">
+                            <a href="#" onclick="window.open('https://www.google.com/maps/search/?api=1&query=<%= post.next_bus2 %>', '_system');">
                                 <img width="100" src="<%= TemplateTags.getThemeAssetUrl('img/google_maps.png') %>">
                             </a>
                         </li>
