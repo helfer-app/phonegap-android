@@ -38,6 +38,7 @@
                                 <hr>
                                 <form>
                                     <input name="muell" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     Wo ist der Mülleimer voll? <code>*</code>
                                     <select class="form-control" name="orte" required>
                                         <option value="HelferPoint">HelferPoint</option>
@@ -73,6 +74,7 @@
                                 <hr>
                                 <form>
                                     <input name="kaputt" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     Was genau ist kaputt gegangen? <code>*</code>
                                     <input class="form-control" name="gegenstand" placeholder="z.B. Tisch, Schwebebalken, Tür etc." type="text" required>
                                     <br>
@@ -109,6 +111,7 @@
                             <div class="tab-pane fade" id="tab3default">
                                 <form>
                                     <input name="sonstiges" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     <h1><b>Spezielles Anliegen das gemeldet werden sollte? Dann...</b></h1>
                                     <hr>
                                     <code>Bitte fülle die Felder entsprechend deinem Anliegen aus</code>
@@ -132,6 +135,7 @@
                             <div class="tab-pane fade" id="tab4default">
                                 <form>
                                     <input name="feedback" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     <h1><b>Hast du Feedback zur App? Dann ist hier der richtige Platz! :)</b></h1>
                                     <hr>
                                     <br>
